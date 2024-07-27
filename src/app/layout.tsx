@@ -20,7 +20,11 @@ export default function RootLayout({
       <body className={cn(
           'min-h-screen bg-background font-sans antialiased',
           inter.variable,
-      )}>{children}</body>
+      )}>
+          <main vaul-drawer-wrapper="">
+            {children}
+          </main>
+      </body>
     </html>
   );
 }
