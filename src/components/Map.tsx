@@ -12,7 +12,7 @@ export const Map: React.FC<MapProps> = ({apiKey}) => {
     const [open, setOpen] = React.useState(false);
 
     useEffect(() => {
-        initMap(apiKey, mapRef.current, () => setOpen(true))
+        initMap(apiKey, mapRef.current, () => setOpen(true));
     }, [apiKey]);
 
     return <>

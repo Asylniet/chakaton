@@ -18,11 +18,12 @@ import {Sira} from "@/components/Sira";
 type MainDrawerProps = {
     open: boolean;
     setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+    onClose?: () => void;
 }
 
-export const MainDrawer: React.FC<MainDrawerProps> = ({open, setOpen}) => {
+export const MainDrawer: React.FC<MainDrawerProps> = ({open, setOpen, onClose}) => {
     return (
-        <Drawer noBodyStyles open={open} onOpenChange={setOpen}>
+        <Drawer noBodyStyles open={open} onOpenChange={setOpen} onClose={onClose}>
             <DrawerContent className='w-full h-full max-h-[96%]'>
                 <DrawerHeader className="text-left">
                     <DrawerTitle>Edit profile</DrawerTitle>

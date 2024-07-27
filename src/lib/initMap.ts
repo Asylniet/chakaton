@@ -1,6 +1,8 @@
 import {Loader} from "@googlemaps/js-api-loader";
-import {markers} from "@/lib/constants";
+import {MarkerClusterer, Renderer} from "@googlemaps/markerclusterer";
+import {DEfAULT_ZOOM, locations} from "@/lib/constants";
 import {createMarkerElement} from "@/lib/utils";
+import {ClusterRenderer} from "@/lib/clusterRenderer";
 
 export const initMap = async (apiKey: string, element: HTMLDivElement | null, onClick: () => void) => {
     if (!element) return;
@@ -16,37 +18,39 @@ export const initMap = async (apiKey: string, element: HTMLDivElement | null, on
 
     const map = new Map(element, {
         center: {lat: 21.422487, lng: 39.8260},
-        zoom: 17,
+        zoom: DEfAULT_ZOOM,
         mapId: "6738530fb632a00",
         mapTypeId: "hybrid",
     });
 
     if (!map) return;
 
-    markers.forEach((markerData) => {
-        const {zoomCallback, setZoom, ...markerOptions} = markerData;
+    const markers = locations.map((location) => {
+        const {
+            setZoom,
+            ...markerOptions
+        } = location;
 
         const marker = new AdvancedMarkerElement({
             ...markerOptions,
             map,
-            content: createMarkerElement(markerData.title),
-        });
+            content: createMarkerElement(location.title),
+        })
 
         marker.addListener("gmp-click", () => {
             map.setCenter(marker.position as google.maps.LatLng);
-            if (setZoom) map.setZoom(setZoom);
-            if (markerData.gmpClickable) onClick();
+            // Map won't center smoothly if there is no change in zoom
+            // hence I added a random small number to zoom to make it smooth
+            if (setZoom) map.setZoom(setZoom + Math.random() / 100);
+            if (marker.gmpClickable) {
+                setTimeout(() => onClick(), 300);
+            }
         });
 
-        const handleZoom = () => {
-            const zoom = map.getZoom();
-            if (zoom && !!zoomCallback) {
-                marker.map = zoomCallback(zoom) ? map : null;
-            }
-        }
+        return marker;
+    })
 
-        handleZoom();
-        map.addListener('zoom_changed', handleZoom);
-    });
+    new MarkerClusterer({markers, map, renderer: new ClusterRenderer()});
 
+    return map;
 }
