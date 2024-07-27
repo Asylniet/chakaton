@@ -16,8 +16,9 @@ const Drawer = ({
 )
 Drawer.displayName = "Drawer"
 
+
 const NestedDrawer = ({
-                          shouldScaleBackground = true,
+                          shouldScaleBackground = false,
                           ...props
                       }: React.ComponentProps<typeof DrawerPrimitive.NestedRoot>) => (
     <DrawerPrimitive.NestedRoot
@@ -26,6 +27,7 @@ const NestedDrawer = ({
     />
 )
 Drawer.displayName = "NestedDrawer"
+
 
 const DrawerTrigger = DrawerPrimitive.Trigger
 
@@ -54,13 +56,13 @@ const DrawerContent = React.forwardRef<
         <DrawerPrimitive.Content
             ref={ref}
             className={cn(
-                "fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto max-h-[96%] flex-col rounded-t-[10px] border bg-background",
+                "fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto max-h-[97%] flex-col rounded-t-[10px] border bg-background",
                 className
             )}
             {...props}
         >
             <div className="mx-auto mt-2 h-1 w-[100px] rounded-full bg-muted"/>
-            <section className='overflow-y-auto'>
+            <section className="overflow-y-auto">
                 {children}
             </section>
         </DrawerPrimitive.Content>
