@@ -67,3 +67,18 @@
     @apply bg-background text-foreground;
   }
 }
+
+.marker-label {
+  position: relative;
+  font-size: 14px !important;
+  font-weight: bold;
+  color: black;
+  background-color: white;
+  padding: 2px 5px;
+  border-radius: 10px;
+  top:35px;
+}
+  
+.marker-layer {
+  position: relative;
+}
