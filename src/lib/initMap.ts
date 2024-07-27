@@ -43,7 +43,7 @@ export const initMap = async (apiKey: string, element: HTMLDivElement | null, on
             // hence I added a random small number to zoom to make it smooth
             if (setZoom) map.setZoom(setZoom + Math.random() / 100);
             if (marker.gmpClickable) {
-                setTimeout(() => onClick(), 300);
+                setTimeout(() => onClick(), 200);
             }
         });
 
