@@ -1,6 +1,7 @@
 "use client";
 import React, {useEffect, useRef} from "react";
 import {Loader} from "@googlemaps/js-api-loader";
+import {MainDrawer} from "@/components/MainPage";
 
 interface MapProps {
     apiKey: string;
@@ -8,6 +9,7 @@ interface MapProps {
 
 const Map: React.FC<MapProps> = ({apiKey}) => {
     const mapRef = useRef<HTMLDivElement>(null);
+    const [open, setOpen] = React.useState(false);
 
     useEffect(() => {
         const loader = new Loader({
@@ -39,7 +41,7 @@ const Map: React.FC<MapProps> = ({apiKey}) => {
                             lat: 21.422487
                             , lng: 39.826206
                         },
-                        title: "Kaaba",
+                        title: "Al-Haram",
                         icon: {
                             url:
                                 "data:image/svg+xml;charset=UTF-8," +
@@ -102,12 +104,19 @@ const Map: React.FC<MapProps> = ({apiKey}) => {
                         map.getDiv().style.cursor = "";
                     });
 
+                    marker.addListener("click", () => {
+                        setOpen(true);
+                    });
+
                 });
             }
         });
     }, [apiKey]);
 
-    return <div ref={mapRef} style={{height: "100%", width: "100%"}}/>;
+    return <>
+        <div ref={mapRef} style={{height: "100%", width: "100%"}}/>
+        <MainDrawer open={open} setOpen={setOpen}/>
+    </>;
 };
 
 export default function Home() {

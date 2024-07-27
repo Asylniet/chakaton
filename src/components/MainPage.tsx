@@ -15,10 +15,14 @@ import React from "react";
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs"
 import {Sira} from "@/components/Sira";
 
-export const MainPage = () => {
-    const [open, setOpen] = React.useState(true)
+type MainDrawerProps = {
+    open: boolean;
+    setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export const MainDrawer: React.FC<MainDrawerProps> = ({open, setOpen}) => {
     return (
-        <Drawer noBodyStyles>
+        <Drawer noBodyStyles open={open} onOpenChange={setOpen}>
             <DrawerTrigger asChild>
                 <Button variant="outline">Open drawer</Button>
             </DrawerTrigger>
@@ -42,7 +46,24 @@ export const MainPage = () => {
                             <div className="h-screen w-full bg-amber-100"/>
                         </TabsContent>
                         <TabsContent value="amal">
-                            <div className="h-24 w-full bg-green-100"/>
+                            <NestedDrawer noBodyStyles>
+                                <DrawerTrigger asChild>
+                                    <div className="h-24 w-full bg-green-100"/>
+                                </DrawerTrigger>
+                                <DrawerContent className="w-full h-full max-h-[94%]">
+                                    <DrawerHeader className="text-left">
+                                        <DrawerTitle>Second Drawer</DrawerTitle>
+                                        <DrawerDescription>
+                                            Make changes to your profile here. Click save when you are done.
+                                        </DrawerDescription>
+                                    </DrawerHeader>
+                                    <DrawerFooter className="pt-2">
+                                        <DrawerClose asChild>
+                                            <Button variant="outline">Cancel</Button>
+                                        </DrawerClose>
+                                    </DrawerFooter>
+                                </DrawerContent>
+                            </NestedDrawer>
                         </TabsContent>
                         <TabsContent value="sira">
                             <Sira/>
