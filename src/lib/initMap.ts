@@ -1,5 +1,5 @@
 import {Loader} from "@googlemaps/js-api-loader";
-import {MarkerClusterer, Renderer} from "@googlemaps/markerclusterer";
+import {MarkerClusterer} from "@googlemaps/markerclusterer";
 import {DEfAULT_ZOOM, locations} from "@/lib/constants";
 import {createMarkerElement} from "@/lib/utils";
 import {ClusterRenderer} from "@/lib/clusterRenderer";
