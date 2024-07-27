@@ -17,7 +17,7 @@ export const ContextLink: React.FC<ContextLinkProps> = ({children, content, dept
                     {children}
                 </div>
             </DrawerTrigger>
-            <DrawerContent className="w-full h-full" style={{maxHeight: (97 - depth * 2) + '%'}}>
+            <DrawerContent className="w-full h-full" style={{maxHeight: (96 - depth * 2) + '%'}}>
                 <DrawerTitle className='sr-only'>{content}</DrawerTitle>
                 {content}
             </DrawerContent>
