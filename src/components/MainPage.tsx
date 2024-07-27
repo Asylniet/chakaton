@@ -23,9 +23,6 @@ type MainDrawerProps = {
 export const MainDrawer: React.FC<MainDrawerProps> = ({open, setOpen}) => {
     return (
         <Drawer noBodyStyles open={open} onOpenChange={setOpen}>
-            <DrawerTrigger asChild>
-                <Button variant="outline">Open drawer</Button>
-            </DrawerTrigger>
             <DrawerContent className='w-full h-full max-h-[96%]'>
                 <DrawerHeader className="text-left">
                     <DrawerTitle>Edit profile</DrawerTitle>
