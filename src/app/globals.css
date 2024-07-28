@@ -93,3 +93,12 @@
     border-top: 8px solid var(--color);
     backdrop-filter: blur(10px);
 }
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}

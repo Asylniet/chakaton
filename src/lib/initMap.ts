@@ -1,8 +1,10 @@
 import {Loader} from "@googlemaps/js-api-loader";
 import {MarkerClusterer} from "@googlemaps/markerclusterer";
-import {DEfAULT_ZOOM, locations} from "@/lib/constants";
+import {DEfAULT_ZOOM, locations, MAP_CENTER} from "@/lib/constants";
 import {createMarkerElement} from "@/lib/utils";
 import {ClusterRenderer} from "@/lib/clusterRenderer";
+
+const MAP_ID = "6738530fb632a00";
 
 export const initMap = async (apiKey: string, element: HTMLDivElement | null, onClick: () => void) => {
     if (!element) return;
@@ -17,10 +19,13 @@ export const initMap = async (apiKey: string, element: HTMLDivElement | null, on
     const {AdvancedMarkerElement} = await loader.importLibrary("marker") as google.maps.MarkerLibrary;
 
     const map = new Map(element, {
-        center: {lat: 21.422487, lng: 39.8260},
+        center: MAP_CENTER,
         zoom: DEfAULT_ZOOM,
-        mapId: "6738530fb632a00",
+        mapId: MAP_ID,
         mapTypeId: "hybrid",
+        fullscreenControl: false,
+        zoomControl: false,
+        mapTypeControl: false,
     });
 
     if (!map) return;
@@ -28,6 +33,7 @@ export const initMap = async (apiKey: string, element: HTMLDivElement | null, on
     const markers = locations.map((location) => {
         const {
             setZoom,
+            images,
             ...markerOptions
         } = location;
 
@@ -42,9 +48,7 @@ export const initMap = async (apiKey: string, element: HTMLDivElement | null, on
             // Map won't center smoothly if there is no change in zoom
             // hence I added a random small number to zoom to make it smooth
             if (setZoom) map.setZoom(setZoom + Math.random() / 100);
-            if (marker.gmpClickable) {
-                setTimeout(() => onClick(), 200);
-            }
+            if (marker.gmpClickable) onClick();
         });
 
         return marker;
