@@ -3,16 +3,18 @@ import {
     DrawerTrigger, NestedDrawer
 } from "@/components/ui/drawer";
 import React, {PropsWithChildren} from "react";
+import {cn} from '@/lib/utils'
 
 type ContextLinkProps = PropsWithChildren & {
     content: React.ReactNode;
     depth?: number;
+    triggerClassname?: string;
 }
 
-export const ContextLink: React.FC<ContextLinkProps> = ({children, content, depth = 1}) => {
+export const ContextLink: React.FC<ContextLinkProps> = ({children, content, depth = 1, triggerClassname}) => {
     return (
         <NestedDrawer>
-            <DrawerTrigger asChild className='underline text-blue-700'>
+            <DrawerTrigger asChild className={cn('underline text-blue-700', triggerClassname)}>
                 <div className='inline-block'>
                     {children}
                 </div>
