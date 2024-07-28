@@ -4,12 +4,8 @@ import {
     Carousel, CarouselApi,
     CarouselContent,
     CarouselItem,
-    CarouselNext,
-    CarouselPrevious,
 } from "@/components/ui/carousel"
 import Image from "next/image";
-import useEmblaCarousel from "embla-carousel-react";
-import {EmblaCarouselType} from "embla-carousel";
 import {cn} from "@/lib/utils";
 
 type ImageCarouselProps = {
@@ -17,7 +13,7 @@ type ImageCarouselProps = {
     interval?: number;
 }
 
-const ImageCarousel: React.FC<ImageCarouselProps> = ({images, interval = 5000}) => {
+const ImageCarousel: React.FC<ImageCarouselProps> = ({images}) => {
     const [api, setApi] = React.useState<CarouselApi>()
     const [current, setCurrent] = React.useState(0)
 
