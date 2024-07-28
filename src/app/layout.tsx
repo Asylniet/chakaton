@@ -2,6 +2,7 @@ import type {Metadata, Viewport} from "next";
 import {Inter} from "next/font/google";
 import "./globals.css";
 import {cn} from "@/lib/utils";
+import Script from "next/script";
 
 const inter = Inter({subsets: ["latin"], variable: "--font-sans"});
 
@@ -23,6 +24,9 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
+        <head>
+        <Script strategy="beforeInteractive" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJv7lkKemUFD_ovIk1G5WEmRlwtdPMC9M&libraries=geometry" />
+        </head>
         <body className={cn(
             'min-h-dvh bg-background font-sans antialiased',
             inter.variable,

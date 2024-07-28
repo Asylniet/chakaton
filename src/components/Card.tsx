@@ -14,7 +14,7 @@ export const Card: React.FC<CardProps> = ({location, onClick}) => {
 
     React.useEffect(() => {
         const computeDistance = async () => {
-            if (typeof google === 'undefined') return;
+            // if (typeof google === 'undefined') return;
             const geometry = await google.maps.importLibrary("geometry") as google.maps.GeometryLibrary;
             const distance = geometry.spherical.computeDistanceBetween(location.position!, MAP_CENTER);
             setDistance(distance.toFixed(2));
