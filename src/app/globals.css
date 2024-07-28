@@ -102,3 +102,11 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
+
+*:focus {
+    outline: none !important;
+}
+
+.gm-style, .gm-style * {
+    outline: none !important;
+}

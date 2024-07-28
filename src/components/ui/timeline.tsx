@@ -1,4 +1,6 @@
 import React, {PropsWithChildren} from 'react';
+import {cn} from "@/lib/utils";
+import {className} from "postcss-selector-parser";
 
 type TimelineProps = PropsWithChildren & {}
 
@@ -25,11 +27,14 @@ const TimelinePoint: React.FC<TimelinePointProps> = ({children}) => {
 };
 
 
-type TimelineItemProps = PropsWithChildren & {}
+type TimelineItemProps = PropsWithChildren & {
+    id?: string;
+    className?: string;
+}
 
-const TimelineItem: React.FC<TimelineItemProps> = ({children}) => {
+const TimelineItem: React.FC<TimelineItemProps> = ({children, id}) => {
     return (
-        <div className="grid gap-1 text-sm relative">
+        <div id={id} className={cn("grid gap-1 text-sm relative", className)}>
             <TimelinePoint/>
             {children}
         </div>

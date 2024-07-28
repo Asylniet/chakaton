@@ -6,13 +6,15 @@ import React from "react";
 
 type CardProps = {
     location: TLocation;
+    onClick: (event: React.MouseEvent<HTMLDivElement>, location: TLocation) => void;
 }
 
-export const Card: React.FC<CardProps> = ({location}) => {
+export const Card: React.FC<CardProps> = ({location, onClick}) => {
     const [distance, setDistance] = React.useState('0');
 
     React.useEffect(() => {
         const computeDistance = async () => {
+            if (typeof google === 'undefined') return;
             const geometry = await google.maps.importLibrary("geometry") as google.maps.GeometryLibrary;
             const distance = geometry.spherical.computeDistanceBetween(location.position!, MAP_CENTER);
             setDistance(distance.toFixed(2));
@@ -20,7 +22,8 @@ export const Card: React.FC<CardProps> = ({location}) => {
         computeDistance();
     }, [location.position]);
     return (
-        <div className="flex flex-col items-start justify-end w-56 h-full relative overflow-visible">
+        <div className="flex flex-col items-start justify-end w-56 h-full relative overflow-visible"
+             onClick={(event) => onClick(event, location)}>
             <div className='absolute top-0 left-2 z-[1]'>
                 <div className='relative min-h-20 aspect-video rounded-lg overflow-hidden'>
                     <Image fill src={location.images[0]} alt={location.title!}/>

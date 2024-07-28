@@ -1,12 +1,12 @@
 import {Loader} from "@googlemaps/js-api-loader";
 import {MarkerClusterer} from "@googlemaps/markerclusterer";
-import {DEfAULT_ZOOM, locations, MAP_CENTER} from "@/lib/constants";
+import {DEfAULT_ZOOM, locations, MAP_CENTER, TLocation} from "@/lib/constants";
 import {createMarkerElement} from "@/lib/utils";
 import {ClusterRenderer} from "@/lib/clusterRenderer";
 
 const MAP_ID = "6738530fb632a00";
 
-export const initMap = async (apiKey: string, element: HTMLDivElement | null, onClick: () => void) => {
+export const initMap = async (apiKey: string, element: HTMLDivElement | null, onClick: (location: TLocation) => void) => {
     if (!element) return;
 
     const loader = new Loader({
@@ -34,6 +34,10 @@ export const initMap = async (apiKey: string, element: HTMLDivElement | null, on
         const {
             setZoom,
             images,
+            description,
+            overview,
+            amal,
+            sira,
             ...markerOptions
         } = location;
 
@@ -48,7 +52,7 @@ export const initMap = async (apiKey: string, element: HTMLDivElement | null, on
             // Map won't center smoothly if there is no change in zoom
             // hence I added a random small number to zoom to make it smooth
             if (setZoom) map.setZoom(setZoom + Math.random() / 100);
-            if (marker.gmpClickable) onClick();
+            if (marker.gmpClickable) onClick(location);
         });
 
         return marker;
