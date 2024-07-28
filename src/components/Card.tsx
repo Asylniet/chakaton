@@ -27,7 +27,7 @@ export const Card: React.FC<CardProps> = ({location}) => {
                 </div>
             </div>
             <div
-                className='w-full h-4/5 flex flex-col justify-end bg-background/80 backdrop-blur-sm rounded-xl p-2 pb-1'>
+                className='w-full h-4/5 flex flex-col justify-end bg-background shadow-xl shadow-black/20 rounded-xl p-2 pb-1'>
                 <div className='truncate font-medium'>
                     {location.title}
                 </div>
