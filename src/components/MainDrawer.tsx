@@ -13,6 +13,7 @@ import React from "react";
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs"
 import {Sira} from "@/components/Sira";
 import {TLocation} from "@/lib/constants";
+import ImagesCarousel from "@/components/ImagesCarousel";
 
 type MainDrawerProps = {
     open: boolean;
@@ -32,7 +33,7 @@ export const MainDrawer: React.FC<MainDrawerProps> = ({open, setOpen, location})
                 </DrawerHeader>
                 <section className='px-4 w-full relative'>
                     <Tabs defaultValue="overview">
-                        <div className='bg-background sticky top-0 left-0 px-1 py-2 z-20'>
+                        <div className='bg-background sticky top-0 left-0 py-2 z-20'>
                             <TabsList className="w-full">
                                 <TabsTrigger value="overview" className="w-full">Overview</TabsTrigger>
                                 {location.amal && <TabsTrigger value="amal" className="w-full">Amal</TabsTrigger>}
@@ -40,13 +41,16 @@ export const MainDrawer: React.FC<MainDrawerProps> = ({open, setOpen, location})
                             </TabsList>
                         </div>
                         <TabsContent value="overview">
+                            <div className='mb-2'>
+                                <ImagesCarousel images={location.images}/>
+                            </div>
                             {location.overview}
                         </TabsContent>
                         <TabsContent value="amal">
                             {location.amal}
                         </TabsContent>
                         <TabsContent value="sira">
-                            <Sira focusId={location.sira}/>
+                            <Sira focusId={location.sira} searchWord={location.title}/>
                         </TabsContent>
                     </Tabs>
                 </section>

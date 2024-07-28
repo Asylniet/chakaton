@@ -72,7 +72,7 @@ export const locations: TLocation[] = [
         images: [
             '/maqam-1.jpg',
             '/maqam-2.jpg',
-            '/maqam-3.jpeg',
+            '/maqam-3.webp',
         ],
         overview: "Maqaam Ibrahim overview",
         sira: "3",
@@ -103,7 +103,7 @@ export const siraArray: SiraProps[] = [
         content: <>
             <CenteredTitle title='555'/>
             Scientists at a leading research institution unveil a groundbreaking breakthrough in quantum
-            computing.
+            computing. Al-Haram
         </>
     },
     {
@@ -125,7 +125,7 @@ export const siraArray: SiraProps[] = [
             culpa veniam velit labore. Ex quis amet velit tempor aute duis irure eu adipisicing magna deserunt
             tempor quis culpa. Occaecat duis enim velit enim minim excepteur laborum voluptate. Pariatur tempor
             id velit ipsum ipsum cupidatat enim dolor officia excepteur ipsum culpa. Laboris nulla elit
-            adipisicing exercitation ex amet cillum nisi occaecat.
+            adipisicing exercitation ex amet cillum nisi occaecat. Al-Haram bro
             <CenteredTitle title='556'/>
             Irure laboris officia adipisicing ut est
             velit. Incididunt elit voluptate non excepteur officia id dolore amet exercitation non proident quis

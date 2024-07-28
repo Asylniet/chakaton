@@ -34,7 +34,7 @@ type TimelineItemProps = PropsWithChildren & {
 
 const TimelineItem: React.FC<TimelineItemProps> = ({children, id}) => {
     return (
-        <div id={id} className={cn("grid gap-1 text-sm relative", className)}>
+        <div id={id} className={cn("grid gap-1 text-sm relative transition-colors rounded-md", className)}>
             <TimelinePoint/>
             {children}
         </div>
