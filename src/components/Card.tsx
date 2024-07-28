@@ -1,6 +1,6 @@
 'use client'
 
-import {MAP_CENTER, TLocation} from "@/lib/constants";
+import {TLocation} from "@/lib/constants";
 import Image from "next/image";
 import React from "react";
 
@@ -10,18 +10,6 @@ type CardProps = {
 }
 
 export const Card: React.FC<CardProps> = ({location, onClick}) => {
-    const [distance, setDistance] = React.useState('0');
-
-    React.useEffect(() => {
-        const computeDistance = async () => {
-            if (typeof google !== 'undefined') {
-                const geometry = await google.maps.importLibrary("geometry") as google.maps.GeometryLibrary;
-                const distance = geometry.spherical.computeDistanceBetween(location.position!, MAP_CENTER);
-                setDistance(distance.toFixed(2));
-            }
-        };
-        computeDistance();
-    }, [location.position]);
     return (
         <div className="flex flex-col items-start justify-end w-56 h-full relative overflow-visible"
              onClick={(event) => onClick(event, location)}>
@@ -36,7 +24,7 @@ export const Card: React.FC<CardProps> = ({location, onClick}) => {
                     {location.title}
                 </div>
                 <span className='text-amber-400 text-sm'>
-                    {distance} m
+                    {location.distance} m
                 </span>
             </div>
         </div>

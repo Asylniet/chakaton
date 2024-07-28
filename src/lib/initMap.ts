@@ -38,6 +38,7 @@ export const initMap = async (apiKey: string, element: HTMLDivElement | null, on
             overview,
             amal,
             sira,
+            distance,
             ...markerOptions
         } = location;
 
