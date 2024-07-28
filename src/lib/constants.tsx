@@ -62,7 +62,7 @@ export const locations: TLocation[] = [
             itaque iusto, necessitatibus nulla officia omnis optio porro quaerat quibusdam quos
             recusandae rem sit vero voluptatem. Accusantium, aliquid.
         </>,
-        sira: "3",
+        sira: "2",
     },
     {
         position: {lat: 21.422623, lng: 39.826325},
@@ -74,7 +74,7 @@ export const locations: TLocation[] = [
             '/maqam-2.jpg',
             '/maqam-3.webp',
         ],
-        overview: "Maqaam Ibrahim overview",
+        overview: "Макам Ибрахима (место Ибрахима) — место в пределах комплекса Мечеть аль-Харам, на котором стоял пророк Ибрахим во время строительства Каабы. В настоящее время на этом месте находится небольшая постройка с куполом. В Коране макам Ибрахима упоминается дважды. Всевышний говорит (смысл): И мы приказали людям сделать макам Ибрахима (мир ему) местом для молитвы (Коран: 2/185). Макам - это место стояния. Местом стояния Ибрахима (мир ему) является камень, огороженный стеклянным столбом. При строительстве Каабы Ибрахим (мир ему) стоял на нем. Когда стена поднялась, и камень поднимался, т.е. Всевышний покорил Ибрахиму (мир ему) этот камень. Пророк Исмаил (мир ему) подавал камни пророку Ибрахиму (мир ему) и тот камень, на котором он стоял, поднимался, опускался или обходил по необходимости Каабу на подобии подъемного крана. Этот макам (камень) пришел из Рая вместе с пророком Адамом В хадисе сказано: Черный камень и макам являются яхонтами из яхонтов Рая. Если бы Всевышний не погасил их сияние, то они бы осветили все, между востоком и западом (Тирмизи, Хаким). Этот макам является одним из чудес (муъжизат) пророка Ибрахима (мир ему). Всевышний сделал камень мягким для него. До сих пор на нем видны следы обеих ног Ибрахима (мир ему).",
         sira: "3",
     },
     {
@@ -85,7 +85,32 @@ export const locations: TLocation[] = [
         images: [
             '/zamzam-1.jpg',
         ],
-        overview: "Zamzam overview",
+        overview: <div className="mr-3"><p className="mb-2">В самой главной мечети мусульман в Мекке в 18 метрах от Чёрного камня находится священный колодец Зам-зам. История его возникновения связана с жизнью двух пророков - Ибрахима и его сына Исмаила (мир ему)</p> 
+        <p className="mb-2">В настоящее время в мечети Аль-Харам есть более чем 700 кранов, ежедневно сотни тысяч паломников берут оттуда воду Замзам. В добавок к этому тысячи специальных машин развозят воду Замзам по городам Саудии. И хвала Всевышнему, не смотря на это вода источника Замзам не кончается. <span className="font-bold">Разве это не является доказательством величия Всевышнего Аллаха?!</span></p></div>,
+        amal:
+        <>
+            <ContextLink content={<>
+                    <div>
+                        <img className="rounded-[15px] w-[90%] mx-auto" src='/zamzam.jpeg'/>
+                        <p className="text-black text-center text-[24px] font-bold mt-2">Правила питья воды Замзам</p>
+                        <ul className="ml-6 mt-2 text-[20px]">
+                            <li>1) Обратиться в сторону киблы</li>
+                            <li className="mt-2">2) Произнести имя Аллаха</li>
+                            <li className="mt-2">3) Пить ее в три приема</li>
+                            <li className="mt-2">4) Когда закончишь пить, произнеси «Альхамдулиллях</li>
+                        </ul>
+                    </div>
+                </>} triggerClassname='text-[16px] font-bold text-[#09090B] no-underline'>
+                <div className="flex gap-2 bg-[#f4f4f5] p-[5px] rounded-[15px]">
+                    <img className="w-[125px] h-[125px] rounded-[10px]" src={"/zamzam.jpeg"}/>
+                    <div>
+                        <p>Правила питья воды Замзам</p>
+                        <p className="text-[14px] text-[#71717A] font-regular mt-2">Когда ты пьешь воду Зам-зам, ты должен обратиться в сторону киблы...</p>
+                    </div>
+                </div>
+                
+            </ContextLink>
+        </>,
         sira: "3",
     },
 ];
@@ -118,6 +143,11 @@ export const siraArray: SiraProps[] = [
         id: "3",
         title: "Go to school",
         content: <>
+            <ContextLink content={<>
+                <p>Hello</p>
+            </>}>
+                Anim amet sit in
+            </ContextLink>
             A group of scientists in Europe publish a paper on quantum computing research. Nostrud amet
             cillum nisi irure. Occaecat voluptate sunt laboris magna dolore. Occaecat sint sit anim quis nisi
             enim. Nostrud tempor Lorem ad quis ea mollit sint et pariatur quis ea consectetur in officia. Dolor
