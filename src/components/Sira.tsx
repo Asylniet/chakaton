@@ -12,7 +12,7 @@ export const Sira: React.FC<SiraProps> = ({focusId, searchWord}) => {
     React.useEffect(() => {
         const element = document.getElementById(focusId);
         if (!element) return;
-        element.scrollIntoView({behavior: 'smooth', block: 'start'});
+        element.scrollIntoView({behavior: 'smooth', block: 'center'});
         element.className += ' transition-colors bg-accent';
 
         setTimeout(() => {

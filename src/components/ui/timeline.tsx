@@ -1,12 +1,14 @@
-import React, {PropsWithChildren} from 'react';
+import React, {PropsWithChildren, RefObject} from 'react';
 import {cn} from "@/lib/utils";
 import {className} from "postcss-selector-parser";
 
-type TimelineProps = PropsWithChildren & {}
+type TimelineProps = PropsWithChildren & {
+    ref?: RefObject<HTMLDivElement>
+}
 
-const Timeline: React.FC<TimelineProps> = ({children}) => {
+const Timeline: React.FC<TimelineProps> = ({children, ref}) => {
     return (
-        <div className="p-6 sm:p-10">
+        <div ref={ref} className="p-6 sm:p-10">
             <div
                 className="after:absolute after:inset-y-0 after:w-px after:bg-muted-foreground/20 relative pl-6 after:left-0 grid gap-10">
                 {children}
