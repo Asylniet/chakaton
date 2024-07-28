@@ -78,20 +78,26 @@ export const locations: TLocation[] = [
             <>
               <div className="flex gap-2 p-[5px] rounded-[15px]">
                 <div>
-                  <p className="text-center font-bold text-[24px] mb-2">
+                  <p className="text-center font-bold mb-2">
                     Действия при входе в мечеть Аль-Харам
                   </p>
-                  <p className="ml-6 mt-2 text-[16px]">
+                  <p className="ml-6 mt-2">
                     <p className="mt-4 mb-2">
                       1) То есть даже не снимая груз с транспорта, по прибытии в
                       гостиницу или на стоянку, оставляя все как есть, поручив
                       одному смотреть за вещами нужно отправиться в Масжидуль
-                      Харам на тавафул куддум (таваф прибытия в Мекку). Не надо
-                      даже переодеваться. Не надо даже заносить вещи в номера.
-                      Это желательно так делать. Если слишком устали или мешают
-                      другие, можно и в другое время совершить таваф. Тавафул
-                      куддум можно совершить в любое время до отправления на
-                      Арафат.
+                      Харам на {" "}
+                      <ContextLink content={
+                        <div className="text-center h-full flex flex-col justify-center  text-lg font-bold px-2">
+                            Не надо даже переодеваться. Не надо даже заносить вещи в номера.
+                            Это желательно так делать. Если слишком устали или мешают
+                            другие, можно и в другое время совершить таваф. Тавафул
+                            куддум можно совершить в любое время до отправления на
+                            Арафат.
+                        </div>
+                      }>тавафул куддум 
+                      </ContextLink>
+                      (таваф прибытия в Мекку). 
                     </p>
                     <p className="mb-2">
                       2) Покаяться и чуть задержаться в мыслях, что очищаешься
@@ -114,15 +120,15 @@ export const locations: TLocation[] = [
           }
           triggerClassname="text-[16px] text-[#09090B]"
         >
-            <p className="text-black text-center text-[24px] font-bold mt-2">
+            <p className="text-black text-center font-bold mt-2">
               Правила посещения Аль-Харам
             </p>
         </ContextLink>
-        <ul className="ml-0 mt-2 text-[20px]">
+        <ul className="ml-0 mt-2">
             <li>
-            1) (По возможности) Сразу же идти на тавафул Масжидуль Харам на
+            1) (По возможности) Сразу же идти на тавафул Масжидуль Харам на {" "}
             <ContextLink content={
-                <div className="text-center h-full flex flex-col justify-center  text-lg font-bold">
+                <div className="text-center h-full flex flex-col justify-center  text-lg font-bold px-2">
                     Первый обход вокруг Каабы, совершаемый паломниками после прибытия в Мекку.
                 </div>
             }>
@@ -204,16 +210,17 @@ export const locations: TLocation[] = [
     ),
     amal: (
       <>
-        <ContextLink
-          content={
-            <>
-              <div className="flex gap-2 p-[5px] rounded-[15px]">
-                <div>
-                  <p className="text-center font-bold text-[24px] mb-2">
-                    {" "}
-                    Чтение два ракаат намаза за макамом
-                  </p>
-                  <p className="ml-6 mt-2 text-[16px]">
+          <div>
+            <img
+              className="rounded-[15px] w-[100%] mx-auto"
+              src="/maqam-how-to.jpg"
+              alt="image"
+            />
+            <p className="text-center font-bold mt-4">
+            {" "}
+            Чтение два ракаат намаза за макамом
+            </p>
+            <p className="mt-2">
                     <p className="mt-4 mb-2">
                       Сподвижники Пророка (с.а.в.) и его праведные последователи
                       привыкли собираться у макама Ибрахима для совершения
@@ -232,23 +239,7 @@ export const locations: TLocation[] = [
                       стояния за Макамом.
                     </p>
                   </p>
-                </div>
-              </div>
-            </>
-          }
-          triggerClassname="text-[16px] font-bold text-[#09090B] no-underline"
-        >
-          <div>
-            <img
-              className="rounded-[15px] w-[100%] mx-auto"
-              src="/maqam-how-to.jpg"
-              alt="image"
-            />
-            <ul className="ml-6 mt-2 text-[20px] text-center">
-              <li>Чтение два ракаат намаза за макамом</li>
-            </ul>
           </div>
-        </ContextLink>
       </>
     ),
     sira: "4",
@@ -282,7 +273,16 @@ export const locations: TLocation[] = [
     ),
     amal: (
       <>
-        <ContextLink
+          <div className="">
+            <img
+              className="rounded-[15px] w-full mx-auto"
+              src="/zamzam.jpeg"
+            />
+            <p className="text-black text-center font-bold mt-2">
+              Правила питья воды Замзам
+            </p>
+            <ul className="mt-2">
+            <ContextLink
           content={
             <div className="w-[100%]">
               <p className="mx-auto p-2">
@@ -307,18 +307,9 @@ export const locations: TLocation[] = [
               </p>
             </div>
           }
-          triggerClassname="no-underline text-[#09090B]"
         >
-          <div className="">
-            <img
-              className="rounded-[15px] w-[90%] mx-auto"
-              src="/zamzam.jpeg"
-            />
-            <p className="text-black text-center text-[24px] font-bold mt-2">
-              Правила питья воды Замзам
-            </p>
-            <ul className="ml-6 mt-2 text-[20px]">
               <li>1) Обратиться в сторону киблы</li>
+        </ContextLink>
               <li className="mt-2">2) Произнести имя Аллаха</li>
               <li className="mt-2">3) Пить ее в три приема</li>
               <li className="mt-2">
@@ -329,7 +320,6 @@ export const locations: TLocation[] = [
               </li>
             </ul>
           </div>
-        </ContextLink>
       </>
     ),
     sira: "7",

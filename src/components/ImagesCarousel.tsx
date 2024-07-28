@@ -36,7 +36,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({images}) => {
     }, [api])
 
     return (
-        <Carousel setApi={setApi} className='relative max-w-md mx-auto'>
+        <Carousel setApi={setApi} className='relative max-w-lg mx-auto'>
             <CarouselContent className="-ml-4">
                 {images.map((image) => (
                     <CarouselItem key={image} className='w-full aspect-video relative pl-4'>

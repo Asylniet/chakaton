@@ -41,7 +41,7 @@ export const MainDrawer: React.FC<MainDrawerProps> = ({open, setOpen, location})
                             </TabsList>
                         </div>
                         <TabsContent value="overview">
-                            <div className='mb-2'>
+                            <div className='mb-2 w-full'>
                                 <ImagesCarousel images={location.images}/>
                             </div>
                             {location.overview}
