@@ -1,6 +1,7 @@
 import {ContextLink} from "@/components/ContextLink";
 import React from "react";
 import {CenteredTitle} from "@/components/ui/centered-title";
+import { DividerHorizontalIcon } from "@radix-ui/react-icons";
 
 export type TLocation = google.maps.marker.AdvancedMarkerElementOptions & {
     setZoom?: number;
@@ -89,27 +90,25 @@ export const locations: TLocation[] = [
         <p className="mb-2">В настоящее время в мечети Аль-Харам есть более чем 700 кранов, ежедневно сотни тысяч паломников берут оттуда воду Замзам. В добавок к этому тысячи специальных машин развозят воду Замзам по городам Саудии. И хвала Всевышнему, не смотря на это вода источника Замзам не кончается. <span className="font-bold">Разве это не является доказательством величия Всевышнего Аллаха?!</span></p></div>,
         amal:
         <>
-            <ContextLink content={<>
-                    <div>
-                        <img className="rounded-[15px] w-[90%] mx-auto" src='/zamzam.jpeg'/>
-                        <p className="text-black text-center text-[24px] font-bold mt-2">Правила питья воды Замзам</p>
-                        <ul className="ml-6 mt-2 text-[20px]">
-                            <li>1) Обратиться в сторону киблы</li>
-                            <li className="mt-2">2) Произнести имя Аллаха</li>
-                            <li className="mt-2">3) Пить ее в три приема</li>
-                            <li className="mt-2">4) Когда закончишь пить, произнеси «Альхамдулиллях</li>
-                        </ul>
-                    </div>
-                </>} triggerClassname='text-[16px] font-bold text-[#09090B] no-underline'>
-                <div className="flex gap-2 bg-[#f4f4f5] p-[5px] rounded-[15px]">
-                    <img className="w-[125px] h-[125px] rounded-[10px]" src={"/zamzam.jpeg"}/>
-                    <div>
-                        <p>Правила питья воды Замзам</p>
-                        <p className="text-[14px] text-[#71717A] font-regular mt-2">Когда ты пьешь воду Зам-зам, ты должен обратиться в сторону киблы...</p>
-                    </div>
-                </div>
-                
-            </ContextLink>
+        <ContextLink content={
+            <div className="w-[100%]">
+                <p className="mx-auto p-2">«Когда ты пьешь воду Зам-зам, ты должен обратиться в сторону киблы, произнести имя Аллаха, пить ее в три приема, и пить столько, сколько сможешь выпить. Когда закончишь пить, произнеси «Альхамдулиллях». Разница между нами и лицемерами в том, что они не пьют эту воду, пока не напьются».</p>
+                <p className="mx-auto p-2">«Такая практика является весьма желательным действием – как призывал к этому великий сподвижник Абдулла ибн Аббас (да будет доволен им Аллах). Тем не менее, это не является обязательным, поэтому не будет греха на том, кто этого не сделает. Время от времени практика обращения к кибле настолько преувеличивается, что на человека, который этого не делает, смотрят свысока. Этого следует избегать.».</p>
+                <p className="text-[#829795] p-2">(Сунан ад-Даракутни, 2/288, Сунан ибн Маджа, 3061, сказал Аль-Бусири в своем Заваид, что цепь этого хадиса сахих)</p>
+            </div>
+        } triggerClassname="no-underline text-[#09090B]">
+            <div className="">
+                <img className="rounded-[15px] w-[90%] mx-auto" src='/zamzam.jpeg'/>
+                <p className="text-black text-center text-[24px] font-bold mt-2">Правила питья воды Замзам</p>
+                <ul className="ml-6 mt-2 text-[20px]">
+                    <li>1) Обратиться в сторону киблы</li>
+                    <li className="mt-2">2) Произнести имя Аллаха</li>
+                    <li className="mt-2">3) Пить ее в три приема</li>
+                    <li className="mt-2">4) Когда закончишь пить, <br/> произнеси «Альхамдулиллях</li>
+                    <li className="mt-2 mb-10">5) Желательно пить воду <br/> Зам-зам стоя</li>
+                </ul>
+            </div>
+        </ContextLink>
         </>,
         sira: "3",
     },
@@ -124,46 +123,88 @@ type SiraProps = {
 export const siraArray: SiraProps[] = [
     {
         id: "1",
-        title: "Birth",
+        title: "Ночь Миграж",
         content: <>
-            <CenteredTitle title='555'/>
-            Scientists at a leading research institution unveil a groundbreaking breakthrough in quantum
-            computing. Al-Haram
+            В честь этого удивительного события названа 17-ая сура Священного Корана «аль-Исра», начинающаяся словами: «Свят тот, Кто перенес Своего раба, чтобы показать ему некоторые из знамений Наших, из Заповедной мечети
+
+            <CenteredTitle title='556'/>
         </>
     },
     {
         id: "2",
-        title: "Some cool event",
+        title: "Ночное путешествие и вознесение Пророка",
         content: <>
-            The first quantum computer is built by a team of researchers in a laboratory in the United
-            States.
+            Рассказал нам Абу Мухаммад Абд аль-Малик ибн Хишам, который говорил: «Рассказал нам Зияд ибн Абдаллах аль-Баккаи
+            со слов Мухаммада ибн Исхака аль-Мутталиби, который сказал:
+            «Потом Посланник Аллаха был перенесен из мечети аль-Харам в
+            мечеть аль-Акса — а это священный дом (Иерусалим) от Илии.
+        </>
+    },
+    {
+        id: "6",
+        title: "Испытание напитком",
+        content: <>
+            ему принесли три сосуда: сосуд с молоком, сосуд с вином и сосуд с водой. Пророк сказал: «Я слышал, как кто-то говорил, когда все это было мне предложено: «Если возьмет воду, то он утонет и утонет его народ; если
+            возьмет вино, то собьется с пути и собьется с пути его народ; если
+            возьмет молоко, то пойдет по правильному пути и его народ пойдет по правильному пути». Я взял молоко и отпил от него. 
+            Тогда сказал ему Джабраиль: «Ты вы брал
+            правильное качество, о Мухаммад, и правильный путь выбрал твой
+            народ. Для вас запретно вино». 
+
+        </>
+    },
+    {
+        id: "6",
+        title: "Открытое чтение Корана",
+        content: <>
+             «Первым человеком, выступившим с публичным чтением Корана после Пророка в Мекке, был Абдаллах
+            ибн Мас’уд. Однажды сподвижники Пророка собрались и сказали:
+            «Ей-богу! Курайшиты никогда не слышали этот Коран открыто. Кто
+            же прочтет его им?» Абдаллах ибн Мас’уд сказал: «Я»
         </>
     },
     {
         id: "3",
-        title: "Go to school",
+        title: "Приказ Ибрахиму (мир ему)",
         content: <>
-            <ContextLink content={<>
+            {/* <ContextLink content={<>
                 <p>Hello</p>
             </>}>
                 Anim amet sit in
-            </ContextLink>
-            A group of scientists in Europe publish a paper on quantum computing research. Nostrud amet
-            cillum nisi irure. Occaecat voluptate sunt laboris magna dolore. Occaecat sint sit anim quis nisi
-            enim. Nostrud tempor Lorem ad quis ea mollit sint et pariatur quis ea consectetur in officia. Dolor
-            in enim est Lorem qui quis consequat consequat esse dolor sit in. Fugiat id elit Lorem tempor id
-            culpa veniam velit labore. Ex quis amet velit tempor aute duis irure eu adipisicing magna deserunt
-            tempor quis culpa. Occaecat duis enim velit enim minim excepteur laborum voluptate. Pariatur tempor
-            id velit ipsum ipsum cupidatat enim dolor officia excepteur ipsum culpa. Laboris nulla elit
-            adipisicing exercitation ex amet cillum nisi occaecat. Al-Haram bro
+            </ContextLink> */}
+            Пророку Ибрахиму (мир ему) свыше было велено отвезти жену Хаджар и нововрожденного сына Исмаила (мир ему) в безлюдную пустыню.
+            В то время существовала лишь былое место Каабы, которая к тому времени обветшала и разрушилась. Хаджар спросила это приказ Всевышнего? На то Ибрахим ответил да
+
             <CenteredTitle title='556'/>
-            Irure laboris officia adipisicing ut est
-            velit. Incididunt elit voluptate non excepteur officia id dolore amet exercitation non proident quis
-            velit. Ullamco anim enim dolor tempor proident nostrud dolore nulla. Voluptate proident id magna.
-            Pariatur dolor in sunt occaecat eu id velit velit irure ut. Quis occaecat adipisicing ex incididunt
-            est sit occaecat occaecat duis. Tempor occaecat do qui adipisicing irure. Anim velit laborum
-            reprehenderit qui officia sit dolore occaecat ut. Nulla laborum do proident amet aliqua. Laborum
-            duis qui laborum.
+        </>
+    },
+    {
+        id: "4",
+        title: "горы Сафа и Маруа",
+        content: <>
+            {/* <ContextLink content={<>
+                <p>Hello</p>
+            </>}>
+                Anim amet sit in
+            </ContextLink> */}
+            Хаджар какое-то время пила оставленную Ибрахимом (мир ему) воду. Но вода быстро закончилась и Хаджар, а также маленький Исмаил (мир ему) стали испытывать жажду и начал плакать. И не в силах вынести плач своего ребенка Хаджар устремилась на гору Сафа, которая находилась неподалеку. Она спустилась с Сафа. Но услышав плач своего ребенка, она, приподняв подол своего платья, быстро пошла в сторону горы Маруа. Взобравшись на гору она вновь оглядела все вокруг. Никого не было видно.
+            Таким образом Хаджар семь раз взбиралась то на Сафа, то на Маруа. 
+            <CenteredTitle title='556'/>
+        </>
+    },
+    {
+        id: "5",
+        title: "Родник Замзам",
+        content: <>
+            {/* <ContextLink content={<>
+                <p>Hello</p>
+            </>}>
+                Anim amet sit in
+            </ContextLink> */}
+            Вдруг плачущий Исмаил (мир ему) перестал плакать. И Хаджар, подбегая к нему, увидела, что из под ног младенца бил ключом источник.
+            Воды было так много, что Хаджар даже старалась хоть как-то убавить струю воды. И чтобы приостановить воду Хаджар, вытянув руки и обратив ладони в сторону родника, произнесла: «Замзам!»
+
+            <CenteredTitle title='556'/>
         </>
     }
 ] as const;
