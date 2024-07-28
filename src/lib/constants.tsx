@@ -44,9 +44,11 @@ export const locations: TLocation[] = [
             <p className="mb-2">
                 <span
                     className="font-bold">
-                Но почему же "запретная"?</span> С арабского "харам" означает "запретный", "неприкосновенный",
-                "святыня",
-                "священное место". На территории мечети Харам, почитаемой священной, изначально было строжайше запрещено
+                Но почему же &quot;запретная&quot;?</span> С
+                арабского &quot;харам&quot; означает &quot;запретный&quot;, &quot;неприкосновенный&quot;,
+                &quot;святыня&quot;,
+                &quot;священное место&quot;. На территории мечети Харам, почитаемой священной, изначально было строжайше
+                запрещено
                 убийство людей и животных, ведение боев, а также ее посещение не мусульманами (иноверцами).
             </p>
             <p className="mb-2">
@@ -80,19 +82,20 @@ export const locations: TLocation[] = [
                                     достоинство священной мечети и том, что это самый ценный дом Аллаха
                                 </p>
                                 <p className="mb-2">
-                                    6) Перевод: "Я прошу защиты Великим Аллахом и Его прекрасной сущностью, Его
+                                    6) Перевод: &quot;Я прошу защиты Великим Аллахом и Его прекрасной сущностью, Его
                                     изначальным
                                     царством, от сатаны, изгнанного от Его милости. С помощью имени Аллаха я вхожу, и
                                     вся
                                     хвала Аллаху.Нет силы и мощи оставить плохое и совершать поклонение, кроме как с
                                     помощью
                                     Всевышнего Аллаха. (Затем читают салават Пророку (мир ему и благословение Аллаха)).
-                                    Затем произносят: "О, мой Аллах! Ты смой грехи мои и открой мне врата Своей
-                                    милости".
-                                    При выходе из мечети читают это же дуа, только лишь там, где читают "ли абваба
-                                    рахматика", нужно читать "абваба ризкика". Это дуа желательно читать при входе и
+                                    Затем произносят: &quot;О, мой Аллах! Ты смой грехи мои и открой мне врата Своей
+                                    милости&quot;.
+                                    При выходе из мечети читают это же дуа, только лишь там, где читают &quot;ли абваба
+                                    рахматика&quot;, нужно читать &quot;абваба ризкика&quot;. Это дуа желательно читать
+                                    при входе и
                                     выходе
-                                    не только в Масжидуль Харам, но и во всех других мечетях. "Умдат", с. 39.
+                                    не только в Масжидуль Харам, но и во всех других мечетях. &quot;Умдат&quot;, с. 39.
                                 </p>
                             </p>
                         </div>
@@ -100,10 +103,10 @@ export const locations: TLocation[] = [
                 </>
             } triggerClassname='text-[16px] font-bold text-[#09090B] no-underline'>
                 <div>
-                    <img className="rounded-[15px] w-[90%] mx-auto" src='/al-haram-how-to.webp'/>
+                    <img className="rounded-[15px] w-[90%] mx-auto" src='/al-haram-how-to.webp' alt="img"/>
                     <ul className="ml-6 mt-2 text-[20px]">
                         <li>1) (По возможности) Сразу же идти на тавафул Масжидуль Харам на тавафул куддум</li>
-                        <li>2) (По возможности) Входят в мечеть через ворота "Бабу ссалам"
+                        <li>2) (По возможности) Входят в мечеть через ворота &quot;Бабу ссалам&quot;
                         </li>
                         <li>3) При приближении к воротам мечети нужно заново покаяться
                         </li>
@@ -184,7 +187,7 @@ export const locations: TLocation[] = [
                 </>
             } triggerClassname='text-[16px] font-bold text-[#09090B] no-underline'>
                 <div>
-                    <img className="rounded-[15px] w-[90%] mx-auto" src='/maqam-how-to.jpg'/>
+                    <img className="rounded-[15px] w-[90%] mx-auto" src='/maqam-how-to.jpg' alt="image"/>
                     <ul className="ml-6 mt-2 text-[20px]">
                         <li>1) Чтение два ракаат намаза за макамом</li>
 
@@ -214,7 +217,7 @@ export const locations: TLocation[] = [
             <>
                 <ContextLink content={<>
                     <div>
-                        <img className="rounded-[15px] w-[90%] mx-auto" src='/zamzam.jpeg'/>
+                        <img className="rounded-[15px] w-[90%] mx-auto" src='/zamzam.jpeg' alt="img"/>
                         <p className="text-black text-center text-[24px] font-bold mt-2">Правила питья воды Замзам</p>
                         <ul className="ml-6 mt-2 text-[20px]">
                             <li>1) Обратиться в сторону киблы</li>
@@ -225,7 +228,7 @@ export const locations: TLocation[] = [
                     </div>
                 </>} triggerClassname='text-[16px] font-bold text-[#09090B] no-underline'>
                     <div className="flex gap-2 bg-[#f4f4f5] p-[5px] rounded-[15px]">
-                        <img className="w-[125px] h-[125px] rounded-[10px]" src={"/zamzam.jpeg"}/>
+                        <img className="w-[125px] h-[125px] rounded-[10px]" src={"/zamzam.jpeg"} alt = "image"/>
                         <div>
                             <p>Правила питья воды Замзам</p>
                             <p className="text-[14px] text-[#71717A] font-regular mt-2">Когда ты пьешь воду Зам-зам, ты
