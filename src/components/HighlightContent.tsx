@@ -27,5 +27,17 @@ const extractText = (node: React.ReactNode): string => {
 };
 
 export const HighlightContent: React.FC<HighlightProps> = ({text, keywords, highlightClass}) => {
-    return <>{highlightText(extractText(text), keywords, highlightClass)}</>;
+    const highlightNode = (node: React.ReactNode): React.ReactNode => {
+        if (typeof node === 'string') {
+            return highlightText(node, keywords, highlightClass);
+        }
+        if (React.isValidElement(node) && node.props.children) {
+            return React.cloneElement(node, {
+                ...node.props,
+                children: React.Children.map(node.props.children, highlightNode),
+            });
+        }
+        return node;
+    };
+    return <>{React.Children.map(text, highlightNode)}</>;
 };
