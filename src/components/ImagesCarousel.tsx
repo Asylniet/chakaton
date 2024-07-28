@@ -4,12 +4,8 @@ import {
     Carousel, CarouselApi,
     CarouselContent,
     CarouselItem,
-    CarouselNext,
-    CarouselPrevious,
 } from "@/components/ui/carousel"
 import Image from "next/image";
-import useEmblaCarousel from "embla-carousel-react";
-import {EmblaCarouselType} from "embla-carousel";
 import {cn} from "@/lib/utils";
 
 type ImageCarouselProps = {
@@ -17,7 +13,7 @@ type ImageCarouselProps = {
     interval?: number;
 }
 
-const ImageCarousel: React.FC<ImageCarouselProps> = ({images, interval = 5000}) => {
+const ImageCarousel: React.FC<ImageCarouselProps> = ({images}) => {
     const [api, setApi] = React.useState<CarouselApi>()
     const [current, setCurrent] = React.useState(0)
 
@@ -52,8 +48,8 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({images, interval = 5000}) 
             </CarouselContent>
             <div className='absolute top-0 left-0 right-0 h-5 overlay'/>
             <div className="absolute top-1 left-0 w-full h-1 flex justify-center gap-2 px-2">
-                {images.map((_, index) => {
-                    return <div className={cn('flex-1 h-[2px] rounded-full', {
+                {images.map((image, index) => {
+                    return <div key={image} className={cn('flex-1 h-[2px] rounded-full', {
                         'bg-white/50': index !== current,
                         'bg-white': index === current,
                     })}/>
