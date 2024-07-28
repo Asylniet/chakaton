@@ -46,15 +46,19 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({images}) => {
                     </CarouselItem>
                 ))}
             </CarouselContent>
-            <div className='absolute top-0 left-0 right-0 h-5 overlay'/>
-            <div className="absolute top-1 left-0 w-full h-1 flex justify-center gap-2 px-2">
-                {images.map((image, index) => {
-                    return <div key={image} className={cn('flex-1 h-[2px] rounded-full', {
-                        'bg-white/50': index !== current,
-                        'bg-white': index === current,
-                    })}/>
-                })}
-            </div>
+            {images.length > 1 ? (
+                <>
+                    <div className='absolute top-0 left-0 right-0 h-5 overlay'/>
+                    <div className="absolute top-1 left-0 w-full h-1 flex justify-center gap-2 px-2">
+                        {images.map((image, index) => {
+                            return <div key={image} className={cn('flex-1 h-[2px] rounded-full', {
+                                'bg-white/50': index !== current,
+                                'bg-white': index === current,
+                            })}/>
+                        })}
+                    </div>
+                </>
+            ) : null}
         </Carousel>
     );
 };
