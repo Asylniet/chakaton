@@ -35,9 +35,9 @@ export const MainDrawer: React.FC<MainDrawerProps> = ({open, setOpen, location})
                     <Tabs defaultValue="overview">
                         <div className='bg-background sticky top-0 left-0 py-2 z-20'>
                             <TabsList className="w-full">
-                                <TabsTrigger value="overview" className="w-full">Overview</TabsTrigger>
-                                {location.amal && <TabsTrigger value="amal" className="w-full">Amal</TabsTrigger>}
-                                <TabsTrigger value="sira" className="w-full">Sira</TabsTrigger>
+                                <TabsTrigger value="overview" className="w-full">Общее</TabsTrigger>
+                                {location.amal && <TabsTrigger value="amal" className="w-full">Амал</TabsTrigger>}
+                                <TabsTrigger value="sira" className="w-full">Сира</TabsTrigger>
                             </TabsList>
                         </div>
                         <TabsContent value="overview">
@@ -56,7 +56,7 @@ export const MainDrawer: React.FC<MainDrawerProps> = ({open, setOpen, location})
                 </section>
                 <DrawerFooter className="pt-2">
                     <DrawerClose asChild>
-                        <Button variant="outline">Cancel</Button>
+                        <Button variant="outline">Закрыть</Button>
                     </DrawerClose>
                 </DrawerFooter>
             </DrawerContent>
